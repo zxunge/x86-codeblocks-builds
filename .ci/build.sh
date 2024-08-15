@@ -25,5 +25,5 @@ cp -f ../Makefile.am src/src/
 cp -f ../lspdiagresultslog.cpp src/plugins/contrib/clangd_client/src/LSPclient/
 
 ./bootstrap
-./configure --with-contrib-plugins=clangd_client --prefix=/opt/codeblocks
+./configure --with-contrib-plugins=all --prefix=/opt/codeblocks
 make -j$(nproc) install
