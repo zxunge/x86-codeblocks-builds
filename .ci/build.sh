@@ -20,7 +20,8 @@ pushd codeblocks_sfmirror/
 
 # Patch build
 #git apply -v ../001-fix-32bit-build.patch
-sed -i ＇78,78s/WX_CXXFLAGS/WX_CPPFLAGS/g' src/src/Makefile.am
+#sed -i ＇78,78s/WX_CXXFLAGS/WX_CPPFLAGS/g' src/src/Makefile.am
+cp -f ../Makefile.am src/src/
 
 ./bootstrap
 ./configure --with-contrib-plugins=all --prefix=/opt/codeblocks
