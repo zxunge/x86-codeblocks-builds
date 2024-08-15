@@ -12,7 +12,7 @@ set -eux
 #./configure --enable-monolithic --disable-debug --enable-stl
 #make -j$(nproc) install
 #cp -rf include/wx/* /mingw32/include/wx-3.2/wx/
-popd
+#popd
 
 # Build codeblocks
 git clone https://github.com/arnholm/codeblocks_sfmirror.git
