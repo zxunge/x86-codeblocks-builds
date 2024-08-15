@@ -22,7 +22,8 @@ pushd codeblocks_sfmirror/
 #git apply -v ../001-fix-32bit-build.patch
 #sed -i ＇78,78s/WX_CXXFLAGS/WX_CPPFLAGS/g' src/src/Makefile.am
 cp -f ../Makefile.am src/src/
+cp -f ../lspdiagresultslog.cpp src/plugins/contrib/clangd_client/src/LSPclient/
 
 ./bootstrap
-./configure --with-contrib-plugins=all --prefix=/opt/codeblocks
+./configure --with-contrib-plugins=clangd_client --prefix=/opt/codeblocks
 make -j$(nproc) install
