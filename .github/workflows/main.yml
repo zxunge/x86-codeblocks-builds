@@ -29,6 +29,9 @@ jobs:
           install: >-
             mingw-w64-i686-toolchain
             libtool
+            automake-wrapper
+            autoconf-wrapper
+            mingw-w64-i686-drmingw
             mingw-w64-i686-wxwidgets3.2-common-libs
             mingw-w64-i686-wxwidgets3.2-msw-libs
             mingw-w64-i686-wxwidgets3.2-msw-cb_headers
