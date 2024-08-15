@@ -33,6 +33,7 @@ jobs:
             mingw-w64-i686-wxwidgets3.2-msw-cb_headers
             base-devel
             zip
+            git
             mingw-w64-i686-hunspell
             mingw-w64-i686-boost
 
