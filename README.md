@@ -11,6 +11,7 @@ Install the following packages in msys2:
 - mingw-w64-i686-wxwidgets3.2-common
 - mingw-w64-i686-wxwidgets3.2-msw
 - mingw-w64-i686-drmingw
+- mingw-w64-i686-tinyxml
 
 Then extract the archive into /opt/codeblocks, export /opt/codeblocks/bin to PATH.
 Run codeblocks!
