@@ -1,7 +1,7 @@
 [![main](https://github.com/zxunge/i686-codeblocks-builds/actions/workflows/main.yml/badge.svg)](https://github.com/zxunge/i686-codeblocks-builds/actions/workflows/main.yml)
 
 # General Introduction
-Automatically built codeblocks for 32b systems. There are also mingw64versions, please download them in the Actions->Artifacts.
+Automatically built codeblocks for 32b systems. There are also mingw64 versions, please download them in the Actions->Artifacts.
 
 ## Usage
 Install the following packages in msys2:
