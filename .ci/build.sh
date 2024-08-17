@@ -21,9 +21,13 @@ git clone https://github.com/arnholm/codeblocks_sfmirror.git
 pushd codeblocks_sfmirror/
 
 # Patch build
-cp -f ../Makefile.am src/src/
+cp -f ../src/Makefile.am src/src/
+cp -f ../plugins/contrib/wxSmith/Makefile.am src/plugins/contrib/wxSmith/
+    # Workaround from msys2: error: definition of static data member 'wxsArrayStringEditorDlg::sm_eventTable' of dllimport'd class
+grep -rl "PLUGIN_EXPORT " src/plugins/contrib/wxSmith | xargs -i sed -i "s/PLUGIN_EXPORT //g" {}
 
 ./bootstrap
-./configure --disable-pch --with-contrib-plugins=all,-wxsmith,-wxsmithaui,-wxsmithcontrib,-Valgrind --prefix=/opt/codeblocks
+./configure --disable-pch --with-contrib-plugins=all,-Valgrind --prefix=/opt/codeblocks
 make -j$(nproc) install
 mv /opt/codeblocks/lib/codeblocks/bin/*.dll /opt/codeblocks/bin/
+mv /opt/codeblocks/lib/*.dll /opt/codeblocks/bin/
