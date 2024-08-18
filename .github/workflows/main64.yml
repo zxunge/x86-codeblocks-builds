@@ -50,5 +50,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: codeblocks
+          name: codeblocks64
           path: D:\msys64\opt\codeblocks
