@@ -3,6 +3,7 @@
 set -eux
 
 NAME="CodeBlocks 13571 and wxWidgets 3.2.6 Build"
+TAG=r13571
 
 ########################### Not used ########################
 # Build wxWidgets, git
@@ -35,4 +36,5 @@ mv /opt/codeblocks/lib/*.dll /opt/codeblocks/bin/
 
 if [[ -v GITHUB_WORKFLOW ]]; then
   echo "RELEASE_NAME=${NAME}" >> $GITHUB_OUTPUT
+  echo "RELEASE_TAG=${TAG}" >> $GITHUB_OUTPUT
 fi
