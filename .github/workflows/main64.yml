@@ -50,27 +50,11 @@ jobs:
         run: |
           .ci/build.sh
           7zr a -mx9 -mqs=on -mmt=on /opt/codeblocks64.7z /opt/codeblocks/*
-          echo "OUTPUT_BINARY=D:/msys64/opt/codeblocks64.7z" >> $GITHUB_OUTPUT
-          echo "OUTPUT_NAME=codeblocks64.7z" >> $GITHUB_OUTPUT
-
-      - name: release
-        id: release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ steps.build.outputs.RELEASE_NAME }}
-          release_name: ${{ steps.build.outputs.RELEASE_NAME }}
+          allowUpdates: true
+          artifacts: "D:/msys64/opt/codeblocks64.7z"
           body: |
             This is ${{ steps.build.outputs.RELEASE_NAME }}. Please read the instructions first.
-          
-      - name: upload
-        id: upload
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.release.outputs.upload_url }}
-          asset_path: ${{ steps.build.outputs.OUTPUT_BINARY }}
-          asset_name: ${{ steps.build.outputs.OUTPUT_NAME }}
-          asset_content_type: application/x-7z-compressed
+          token: ${{ secrets.GITHUB_TOKEN }}
