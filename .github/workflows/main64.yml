@@ -46,6 +46,7 @@ jobs:
             mingw-w64-x86_64-boost
 
       - name: build codeblocks
+        id: build
         shell: msys2 {0}
         run: |
           .ci/build.sh
