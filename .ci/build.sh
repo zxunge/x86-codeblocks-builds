@@ -2,7 +2,7 @@
 
 set -eux
 
-RELEASE_NAME="CodeBlocks 13571 and wxWidgets 3.2.6 Build"
+NAME="CodeBlocks 13571 and wxWidgets 3.2.6 Build"
 
 ########################### Not used ########################
 # Build wxWidgets, git
