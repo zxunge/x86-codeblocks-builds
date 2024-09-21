@@ -41,14 +41,37 @@ jobs:
             base-devel
             zip
             git
+            p7zip
             mingw-w64-i686-hunspell
             mingw-w64-i686-boost
 
       - name: build codeblocks
+        id: build
         shell: msys2 {0}
-        run: .ci/build.sh
+        run: |
+          .ci/build.sh
+          7zr a -mx9 -mqs=on -mmt=on /opt/codeblocks.7z /opt/codeblocks/*
+          echo "OUTPUT_BINARY=D:/msys64/opt/codeblocks.7z" >> $GITHUB_OUTPUT
+          echo "OUTPUT_NAME=codeblocks.7z" >> $GITHUB_OUTPUT
 
-      - uses: actions/upload-artifact@v4
+      - name: release
+        id: release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: codeblocks
-          path: D:\msys64\opt\codeblocks
+          tag_name: ${{ steps.build.outputs.RELEASE_NAME }}
+          release_name: ${{ steps.build.outputs.RELEASE_NAME }}
+          body: |
+            This is ${{ steps.build.outputs.RELEASE_NAME }}. Please read the instructions first.
+          
+      - name: upload
+        id: upload
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.release.outputs.upload_url }}
+          asset_path: ${{ steps.build.outputs.OUTPUT_BINARY }}
+          asset_name: ${{ steps.build.outputs.OUTPUT_NAME }}
+          asset_content_type: application/x-7z-compressed
