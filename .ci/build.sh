@@ -2,9 +2,6 @@
 
 set -eux
 
-NAME="CodeBlocks 13571 and wxWidgets 3.2.6 Build"
-TAG=r13571
-
 ########################### Not used ########################
 # Build wxWidgets, git
 #git clone https://github.com/wxWidgets/wxWidgets.git
@@ -22,6 +19,10 @@ TAG=r13571
 ## Build codeblocks
 git clone https://github.com/arnholm/codeblocks_sfmirror.git
 pushd codeblocks_sfmirror/
+
+## Obtain revision number
+TAG=r$(git log --grep="git-svn-id" --max-count=1 | grep "git-svn-id" | awk -F "@" '{print $2}' | awk '{print $1}')
+NAME="CodeBlocks svn"${TAG}" and wxWidgets 3.2.6 Build"
 
 ## Patch build
 git apply -v ../0001-fix-32-bit-build-and-wxSmith.patch
