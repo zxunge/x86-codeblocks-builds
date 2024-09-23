@@ -22,7 +22,8 @@ pushd codeblocks_sfmirror/
 
 ## Obtain revision number
 TAG=r$(git log --grep="git-svn-id" --max-count=1 | grep "git-svn-id" | awk -F "@" '{print $2}' | awk '{print $1}')
-NAME="CodeBlocks svn"${TAG}" and wxWidgets 3.2.6 Build"
+WX_VERSION=$(wx-config --version-full)
+NAME="CodeBlocks svn "${TAG}" and wxWidgets "${WX_VERSION}" Build"
 
 ## Patch build
 git apply -v ../0001-fix-32-bit-build-and-wxSmith.patch
