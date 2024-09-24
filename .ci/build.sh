@@ -21,7 +21,8 @@ git clone https://github.com/arnholm/codeblocks_sfmirror.git
 pushd codeblocks_sfmirror/
 
 ## Obtain revision number
-TAG=r$(git log --grep="git-svn-id" --max-count=1 | grep "git-svn-id" | awk -F "@" '{print $2}' | awk '{print $1}')
+#TAG=r$(git log --grep="git-svn-id" --max-count=1 | grep "git-svn-id" | awk -F "@" '{print $2}' | awk '{print $1}')
+TAG=r$(git log --graph | grep 'git-svn-id' | head -n 1 | grep -o -e "@\([0-9]*\)" | tr -d '@ ')
 WX_VERSION=$(wx-config --version-full)
 NAME="CodeBlocks svn "${TAG}" and wxWidgets "${WX_VERSION}" Build"
 
