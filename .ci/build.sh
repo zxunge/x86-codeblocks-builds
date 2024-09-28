@@ -27,7 +27,8 @@ WX_VERSION=$(wx-config --version-full)
 NAME="CodeBlocks svn "${TAG}" and wxWidgets "${WX_VERSION}" Build"
 
 ## Patch build
-git apply -v ../0001-fix-32-bit-build-and-wxSmith.patch
+#git apply -v ../0001-fix-32-bit-build-and-wxSmith.patch
+git apply -v ../0001-fix-32-bit-build-wxSmith-and-plugin-loading.patch
 # Workaround from msys2: error: definition of static data member 'wxsArrayStringEditorDlg::sm_eventTable' of dllimport'd class
 grep -rl "PLUGIN_EXPORT " src/plugins/contrib/wxSmith | xargs -i sed -i "s/PLUGIN_EXPORT //g" {}
 
