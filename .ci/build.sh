@@ -29,13 +29,13 @@ NAME="CodeBlocks svn "${TAG}" and wxWidgets "${WX_VERSION}" Build"
 ## Patch build
 #git apply -v ../0001-fix-32-bit-build-and-wxSmith.patch
 #git apply -v ../0001-fix-32-bit-build-wxSmith-and-plugin-loading.patch
-patch -Nbp1 -i ../004-disable-parallel-make-for-SmartIndent.patch \
-               ../005-codeblocks-plugin-fix.patch \
-               ../006-Update-ax_cxx_compile_stdcxx.m4.patch \
-               ../007-makefile-wxsmith-plugin-export-fix.patch \
-               ../008-Use-WX_CPPFLAGS-instead-of-WX_CXXFLAGS-in-Makefile.a.patch
+patch -Nbp1 -i ../004-disable-parallel-make-for-SmartIndent.patch 
+patch -Nbp1 -i ../005-codeblocks-plugin-fix.patch 
+patch -Nbp1 -i ../006-Update-ax_cxx_compile_stdcxx.m4.patch 
+patch -Nbp1 -i ../007-makefile-wxsmith-plugin-export-fix.patch 
+patch -Nbp1 -i ../008-Use-WX_CPPFLAGS-instead-of-WX_CXXFLAGS-in-Makefile.a.patch
 # Workaround from msys2: error: definition of static data member 'wxsArrayStringEditorDlg::sm_eventTable' of dllimport'd class
-grep -rl "PLUGIN_EXPORT " src/plugins/contrib/wxSmith | xargs -i sed -i "s/PLUGIN_EXPORT //g" {}
+#grep -rl "PLUGIN_EXPORT " src/plugins/contrib/wxSmith | xargs -i sed -i "s/PLUGIN_EXPORT //g" {}
 
 ./bootstrap
 ./configure --disable-pch --with-contrib-plugins=all,-Valgrind --prefix=/opt/codeblocks
