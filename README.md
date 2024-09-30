@@ -16,3 +16,8 @@ pacman -S mingw-w64-i686-toolchain            \
 
 Then extract the archive into /opt/codeblocks, export /opt/codeblocks/bin to PATH.
 Run codeblocks!
+
+> [!NOTE]
+> This package requires a working MSYS2 Environment on your computer and lacks the CbLauncher.exe.
+> For the availability of CbLauncher.exe and those necessary dependencies, please refer to one of this repository's forks:
+> [asmwarrior/x86-codeblocks-builds](https://github.com/asmwarrior/x86-codeblocks-builds)
