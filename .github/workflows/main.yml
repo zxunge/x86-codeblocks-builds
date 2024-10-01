@@ -23,6 +23,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - uses: actions/checkout@v4
+        with:
+          repository: arnholm/codeblocks_sfmirror
+
       - uses: msys2/setup-msys2@v2
         with:
           update: true
