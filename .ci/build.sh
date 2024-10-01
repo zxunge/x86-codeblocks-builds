@@ -16,8 +16,6 @@ set -eux
 #popd
 #############################################################
 
-## Clone CodeBlocks' source
-git clone https://github.com/arnholm/codeblocks_sfmirror.git
 pushd codeblocks_sfmirror/
 
 ## Obtain revision number
