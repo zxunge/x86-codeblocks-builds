@@ -18,9 +18,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
     steps:
-      - name: Checkout my repository
-        uses: actions/checkout@v4
-
       - name: Checkout codeblocks_sfmirror
         uses: actions/checkout@v4
         with:
@@ -56,8 +53,6 @@ jobs:
         id: build
         shell: msys2 {0}
         run: |
-          pushd '${{ github.workspace }}/codeblocks_sfmirror/'
-
           ## Obtain revision number
           TAG=r$(git log --graph | grep 'git-svn-id' | head -n 1 | grep -o -e "@\([0-9]*\)" | tr -d '@ ')
           WX_VERSION=$(wx-config --version-full)
