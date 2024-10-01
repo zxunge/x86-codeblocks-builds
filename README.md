@@ -1,4 +1,5 @@
 [![main](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main.yml/badge.svg)](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main.yml)
+[![main64](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main64.yml/badge.svg)](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main64.yml)
 
 # General Introduction
 Automatically built Code::Blocks binaries for both 32-bit and 64-bit Windows systems. You can always download the latest release at [Releases](https://github.com/zxunge/x86-codeblocks-builds/releases)
