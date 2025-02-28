@@ -3,7 +3,7 @@
 [![Downloads](https://img.shields.io/github/downloads/zxunge/x86-codeblocks-builds/total.svg?maxAge=2592001)](https://github.com/zxunge/x86-codeblocks-builds/releases/)
 [![Welcome PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/zxunge/x86-codeblocks-builds/pulls)
 [![Stars](https://img.shields.io/github/stars/zxunge/x86-codeblocks-builds)](https://github.com/zxunge/x86-codeblocks-builds/stargazers)
-![Github](https://img.shields.io/badge/Github-100000.svg?logo=github&logoColor=white
+![Github](https://img.shields.io/badge/Github-100000.svg?logo=github&logoColor=white)
 
 # General Introduction
 Automatically built Code::Blocks binaries for both 32-bit and 64-bit Windows systems. You can always download the latest release at [Releases](https://github.com/zxunge/x86-codeblocks-builds/releases)
