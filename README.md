@@ -1,5 +1,4 @@
-[![main](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main.yml/badge.svg)](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main.yml)
-[![main64](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main64.yml/badge.svg)](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/main64.yml)
+[![build](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/build.yml/badge.svg)](https://github.com/zxunge/x86-codeblocks-builds/actions/workflows/build.yml)
 [![Downloads](https://img.shields.io/github/downloads/zxunge/x86-codeblocks-builds/total.svg?maxAge=2592001)](https://github.com/zxunge/x86-codeblocks-builds/releases/)
 [![Welcome PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/zxunge/x86-codeblocks-builds/pulls)
 [![Stars](https://img.shields.io/github/stars/zxunge/x86-codeblocks-builds)](https://github.com/zxunge/x86-codeblocks-builds/stargazers)
