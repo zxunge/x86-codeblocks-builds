@@ -36,23 +36,28 @@ jobs:
             mingw-w64-i686-drmingw
             base-devel
             zip
-            wget
             git
             p7zip
             mingw-w64-i686-hunspell
             mingw-w64-i686-boost
 
+      - name: Checkout archives
+        if: matrix.arch == 'i686'
+        uses: actions/checkout@v4
+        with:
+          repository: zxunge/mingw-package-archives
+          path: archives
+     
       - name: Set up wxWidgets 3.2
         if: matrix.arch == 'i686'
         shell: msys2 {0}
         run: |
-          wget -q https://github.com/zxunge/mingw-package-archives/blob/main/mingw-w64-i686-wxwidgets3.2-common-3.2.6-2-any.pkg.tar.zst
-          wget -q https://github.com/zxunge/mingw-package-archives/blob/main/mingw-w64-i686-wxwidgets3.2-common-libs-3.2.6-2-any.pkg.tar.zst
-          wget -q https://github.com/zxunge/mingw-package-archives/blob/main/mingw-w64-i686-wxwidgets3.2-common-3.2.6-2-any.pkg.tar.zst
-          wget -q https://github.com/zxunge/mingw-package-archives/blob/main/mingw-w64-i686-wxwidgets3.2-msw-3.2.6-2-any.pkg.tar.zst
-          wget -q https://github.com/zxunge/mingw-package-archives/blob/main/mingw-w64-i686-wxwidgets3.2-msw-libs-3.2.6-2-any.pkg.tar.zst
-          wget -q https://github.com/zxunge/mingw-package-archives/blob/main/mingw-w64-i686-wxwidgets3.2-msw-cb_headers-3.2.6-2-any.pkg.tar.zst
-          pacman -U --noconfirm *.pkg.tar.zst
+          cd archives/
+          pacman -U --noconfirm mingw-w64-i686-wxwidgets3.2-common-libs-3.2.6-2-any.pkg.tar.zst \
+            mingw-w64-i686-wxwidgets3.2-common-3.2.6-2-any.pkg.tar.zst                          \
+            mingw-w64-i686-wxwidgets3.2-msw-3.2.6-2-any.pkg.tar.zst                             \
+            mingw-w64-i686-wxwidgets3.2-msw-libs-3.2.6-2-any.pkg.tar.zst                        \
+            mingw-w64-i686-wxwidgets3.2-msw-cb_headers-3.2.6-2-any.pkg.tar.zst
             
       - name: Setup MSYS2 Environment
         uses: msys2/setup-msys2@v2
