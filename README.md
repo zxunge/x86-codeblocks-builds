@@ -12,6 +12,7 @@ Automatically built Code::Blocks binaries for both 32-bit and 64-bit Windows sys
 > As 32-bit wxWidgets packages are not provided officially by MSYS2, we suggest you using the archives from
 > [zxunge/mingw-package-archives: Msys2 32-bit archives.](https://github.com/zxunge/mingw-package-archives)
 > You can clone the repo and use pacman -U to install them.
+> As a result, the wxWidgets version for 32-bit build has stuck to 3.2.6.0.
 
 Install the following packages in msys2(32-bit users please use 'i686' instead of 'x86_64'):
 ````
